@@ -12,7 +12,7 @@ export default function StartPage() {
   const [showButton, setShowButton] = useState(false);
 
   const welcomeMessage =
-    "مرحباً بك في محفظة زين كاش الرقمية، أنا مساعدك الذكي AI Agent لتحويل شكاوى العملاء إلى تذكرات للقسم المختص داخل الشركة.";
+    "مرحباً بك في  زين كاش، أنا مساعدك الذكي AI Agent لتحويل شكاوى العملاء إلى تذاكر للقسم المختص داخل الشركة.";
 
   useEffect(() => {
     let i = 0;
@@ -109,6 +109,9 @@ export default function StartPage() {
             <span className="relative z-10">أبدأ</span>
           </button>
         </div>
+          <div class="mt-20 font-light text-center">
+              <p className="text-gray-400">تم التطوير من قبل فريق <b>Enki AI Coders</b> <br/> لمسابقة هاكثون زين العراق للذكاء الاصطناعي</p>
+          </div>
       </div>
     </div>
   );

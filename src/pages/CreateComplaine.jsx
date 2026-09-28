@@ -81,7 +81,7 @@ export default function AddComplaint() {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-app-gradient text-white font-almarai"
+      className="min-h-screen bg-app-gradient text-black font-almarai"
     >
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 h-[32rem] w-[32rem] rounded-full bg-brand-blue/15 blur-[120px] animate-pulse-slow" />
@@ -94,9 +94,8 @@ export default function AddComplaint() {
             <h1 className="text-xl sm:text-2xl font-extrabold text-transparent bg-clip-text bg-brand-gradient">
               إضافة شكوى جديدة
             </h1>
-            <AIBadge>تصنيف آلي</AIBadge>
           </div>
-          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-cyan-100/60">
+          <p className="mt-2 text-xs sm:text-sm leading-relaxed ">
             استخدم هذا النموذج لتسجيل شكوى وردت عبر قناة أخرى غير المحادثة
             الآلية. سيتم إنشاء تذكرة جديدة تلقائيًا بنفس التصنيف والأولوية
             المحددين.
@@ -107,13 +106,13 @@ export default function AddComplaint() {
           <SuccessCard complaint={submitted} onReset={resetForm} />
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur-md sm:p-5">
+            <section className="rounded-2xl border p-4 backdrop-blur-md sm:p-5">
               <div className="mb-4 flex items-center justify-between">
                 <div>
-                  <h2 className="text-sm font-semibold text-cyan-50">
+                  <h2 className="text-sm font-semibold ">
                     رسائل الشكوى
                   </h2>
-                  <p className="mt-0.5 text-[11px] text-cyan-100/50">
+                  <p className="mt-0.5 text-[11px]">
                     أضف رسالة واحدة أو أكثر كما وصلت من العميل.
                   </p>
                 </div>
@@ -122,8 +121,7 @@ export default function AddComplaint() {
                   onClick={addMessage}
                   className="
                     group inline-flex items-center gap-2 rounded-xl
-                    border border-brand-teal/40 bg-brand-teal/10
-                    px-3 py-2 text-xs font-semibold text-brand-teal
+                    px-3 py-2 text-xs font-semibold text-cyan-700
                     transition hover:bg-brand-teal/20
                   "
                 >
@@ -135,9 +133,6 @@ export default function AddComplaint() {
               <div className="flex flex-col gap-2.5">
                 {messages.map((m, i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <span className="mt-2.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-[11px] font-medium text-cyan-100/70">
-                      {i + 1}
-                    </span>
                     <textarea
                       value={m.text}
                       onChange={(e) => updateMessage(i, e.target.value)}
@@ -145,10 +140,9 @@ export default function AddComplaint() {
                       placeholder={`نص الرسالة ${i + 1}…`}
                       className="
                         w-full resize-none rounded-xl
-                        border border-white/10 bg-app-secondary/60
-                        px-4 py-2.5 text-sm leading-relaxed text-cyan-50
-                        placeholder:text-cyan-100/30
-                        focus:border-brand-teal/60 focus:outline-none
+                        border
+                        text-black placeholder:text-gray-300
+                        px-4 py-2.5 text-sm leading-relaxed focus:outline-none
                         focus:ring-2 focus:ring-brand-teal/20
                         transition
                       "
@@ -157,7 +151,7 @@ export default function AddComplaint() {
                       <button
                         type="button"
                         onClick={() => removeMessage(i)}
-                        className="mt-1 shrink-0 rounded-lg p-2 text-red-300 transition hover:bg-red-500/10"
+                        className="mt-1 shrink-0 rounded-lg p-2 text-red-300 transition bg-red-500/10"
                         aria-label="حذف الرسالة"
                       >
                         <CloseIcon className="h-4 w-4" />
@@ -180,8 +174,8 @@ export default function AddComplaint() {
                   className="
                     group inline-flex items-center justify-center gap-2
                     rounded-xl border border-white/15 bg-white/[0.04]
-                    px-5 py-2.5 text-sm font-medium text-cyan-100/80
-                    transition hover:bg-white/[0.08] hover:text-cyan-50
+                    px-5 py-2.5 text-sm font-medium 
+                    transition hover:bg-white/[0.08]
                   "
                 >
                   <ArrowRightIcon className="h-4 w-4" />
@@ -193,9 +187,9 @@ export default function AddComplaint() {
                   disabled={submitting}
                   className="
                     group relative inline-flex items-center justify-center gap-2
-                    overflow-hidden rounded-xl px-5 py-2.5
+                    overflow-hidden rounded px-5 py-2.5
                     text-sm font-semibold text-white
-                    bg-gradient-to-r from-brand-blue via-[#4b8bff] to-brand-teal
+                    bg-cyan-700
                     shadow-[0_0_25px_-5px_rgba(59,115,255,0.6)]
                     hover:shadow-[0_0_35px_-2px_rgba(44,167,124,0.7)]
                     transition-all duration-300
@@ -203,7 +197,7 @@ export default function AddComplaint() {
                     disabled:opacity-60 disabled:cursor-wait
                   "
                 >
-                  <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                  <span className="absolute inset-0 -translate-x-full from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                   {submitting ? (
                     <>
                       <Spinner />
@@ -223,8 +217,7 @@ export default function AddComplaint() {
                 </div>
               )}
             </section>
-
-            <AITransformCard />
+              <AITransformCard />
           </form>
         )}
       </main>
@@ -255,26 +248,19 @@ function AITransformCard() {
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <h3 className="text-sm font-semibold text-transparent bg-clip-text bg-brand-gradient">
-              الذكاء الصناعي يقرأ الشكوى ويحوّلها إلى تذكرة
-            </h3>
-            <span className="inline-flex items-center gap-1 rounded-full border border-brand-teal/40 bg-white/[0.04] px-2 py-0.5 text-[10px] font-medium text-brand-teal">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-teal opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-teal" />
-              </span>
-              تلقائي
-            </span>
-          </div>
+              الذكاء الاصطناعي يقرأ الشكوى ويحوّلها إلى تذكرة
+            </h3></div>
 
-          <p className="mt-1 text-xs leading-relaxed text-cyan-100/70">
-            بمجرد إرسال الشكوى الى الصفحة الرئيسية، سيقوم النظام تلقائيًا بـ:
+          <p className="mt-1 text-xs leading-relaxed ">
+            بمجرد إرسال الشكوى الى الصفحة الرئيسية، سيقوم النموذج المدرب تلقائيًا بـ:
           </p>
 
-          <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] text-cyan-100/70">
-            <Step delay="0s" label="قراءة النص" />
-            <Step delay="0.15s" label="استخراج المبلغ ورقم الحساب والتاريخ" />
-            <Step delay="0.3s" label="تحديد التصنيف والأولوية" />
-            <Step delay="0.45s" label="إنشاء تذكرة جاهزة للقسم" />
+          <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px] ">
+            <Step delay="0s" label=" قراءة النص وفهمه" />
+            <Step delay="0.10s" label="معرفة نوع المشكلة وتحويلها بشكل تلقائي الى القسم المختص" />
+            <Step delay="0.20s" label="التركيز على اي معطيات موجودة بداخل النص واستخراجها كعناصر قابلة للنسخ والتخزين مثل التواريخ والمبالغ وارقام الحسابات ..اللخ" />
+            <Step delay="0.30s" label="اعطاء درجة اولوية للتذكرة مثل عالي، متوسط،او منخفض" />
+            <Step delay="0.45s" label="انشاء ملخص للمشكلة بعد فهمها واقتراح حل الى موظف المتابعة" />
           </ul>
         </div>
       </div>
@@ -286,7 +272,7 @@ function Step({ delay = "0s", label }) {
   return (
     <li className="inline-flex items-center gap-1.5">
       <span
-        className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-teal"
+        className="h-1.5 w-1.5 rounded-full bg-brand-teal"
         style={{ animationDelay: delay, animationDuration: "1.6s" }}
       />
       {label}
@@ -308,7 +294,7 @@ function SuccessCard({ complaint, onReset }) {
           <p className="text-sm font-semibold text-transparent bg-clip-text bg-brand-gradient">
             تم تسجيل الشكوى بنجاح
           </p>
-          <p className="mt-0.5 text-xs text-cyan-100/70">
+          <p className="mt-0.5 text-xs ">
             رقم الشكوى:{" "}
             <span className="font-mono font-medium text-brand-teal">
               #{shortId}
@@ -339,7 +325,7 @@ function SuccessCard({ complaint, onReset }) {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-teal opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-teal" />
             </span>
-            <p className="text-[11px] text-cyan-100/70">
+            <p className="text-[11px] ">
               لقد تم تحويل الشكوى للصفحة الرئيسية للشكاوى.. ليتم إنشاء التذكرة
               بواسطة وكيلك للذكاء الصناعي
             </p>
@@ -347,7 +333,7 @@ function SuccessCard({ complaint, onReset }) {
         )}
 
         <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3">
-          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-cyan-100/50">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider ">
             الرسائل المُسجّلة
           </p>
           <ol className="flex flex-col gap-1.5">
@@ -380,12 +366,12 @@ function SuccessCard({ complaint, onReset }) {
           </button>
 
           <button
-            onClick={() => (window.location.href = "/complaints")}
+            onClick={() => (window.location.href = "/complaines")}
             className="
               group inline-flex items-center gap-2 rounded-xl
               border border-white/15 bg-white/[0.04]
-              px-4 py-2.5 text-sm font-medium text-cyan-100/80
-              transition hover:bg-white/[0.08] hover:text-cyan-50
+              px-4 py-2.5 text-sm font-medium 
+              transition hover:bg-white/[0.08]
             "
           >
             <ArrowRightIcon className="h-4 w-4" />

@@ -1,0 +1,12 @@
+services:
+  zaincash-web:
+    image: yousifnimah5/support-ticket-app:latest
+    container_name: support-ticket-app
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+    ports:
+      - "8112:80"
