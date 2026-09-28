@@ -12,8 +12,8 @@ export function Toast({ type = "success", message }) {
           animate-toastIn
           ${
             isSuccess
-              ? "border-brand-teal/40 bg-brand-teal/10 text-emerald-100"
-              : "border-white/15 bg-white/[0.06] text-cyan-100/90"
+              ? "border-brand-teal/40 bg-brand-teal/10 text-black"
+              : "border-white/15 bg-white/[0.06] text-black"
           }
         `}
       >
