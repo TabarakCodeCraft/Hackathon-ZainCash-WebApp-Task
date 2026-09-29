@@ -76,7 +76,7 @@ export default function ComplainesList() {
     {
       target: "[data-tour='create-complaint']",
       title: "إنشاء شكوى",
-      content: "لإنشاء تذكرة بنفسك، اضغط هنا.",
+      content: "لإنشاء شكوى بنفسك، اضغط هنا.",
       placement: "bottom",
     },
   ];
