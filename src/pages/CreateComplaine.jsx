@@ -95,9 +95,10 @@ export default function AddComplaint() {
             </h1>
           </div>
           <p className="mt-2 text-xs sm:text-sm leading-relaxed text-cyan-900/80">
-            استخدم هذا النموذج لتسجيل شكوى وردت عبر قناة أخرى غير المحادثة
-            الآلية. سيتم إنشاء تذكرة جديدة تلقائيًا بنفس التصنيف والأولوية
-            المحددين.
+            من خلال هذه الفورمة، يمكنك إنشاء شكوى يدويًا وإدخال تفاصيلها حسب
+            الحاجة. هذه الصفحة لزيادة تنوع بيانات اختبار النموذج،
+            وتجربة حالات خاصة وسيناريوهات مختلفة للتحقق من دقة نموذج لذكاء الصناعي
+            واستجابته.
           </p>
         </header>
 
@@ -111,9 +112,6 @@ export default function AddComplaint() {
                   <h2 className="text-sm font-bold text-cyan-900">
                     رسائل الشكوى
                   </h2>
-                  <p className="mt-0.5 text-[11px] text-cyan-900/60">
-                    أضف رسالة واحدة أو أكثر كما وصلت من العميل.
-                  </p>
                 </div>
                 <button
                   type="button"
